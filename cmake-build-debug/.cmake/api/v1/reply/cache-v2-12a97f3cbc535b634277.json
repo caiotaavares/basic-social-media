@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Documents/Estudos/Faculdade/Facul1/Gradua\u00e7\u00e3o/Terceiro_Semestre/ATPI/beecrowd/HW1/untitled1/cmake-build-debug"
+			"value" : "d:/Documents/Estudos/Projetos/cpp/social-media/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Documents/Estudos/Faculdade/Facul1/Gradua\u00e7\u00e3o/Terceiro_Semestre/ATPI/beecrowd/HW1/untitled1"
+			"value" : "D:/Documents/Estudos/Projetos/cpp/social-media"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Documents/Estudos/Faculdade/Facul1/Gradua\u00e7\u00e3o/Terceiro_Semestre/ATPI/beecrowd/HW1/untitled1/cmake-build-debug"
+			"value" : "D:/Documents/Estudos/Projetos/cpp/social-media/cmake-build-debug"
 		},
 		{
 			"name" : "untitled1_IS_TOP_LEVEL",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Documents/Estudos/Faculdade/Facul1/Gradua\u00e7\u00e3o/Terceiro_Semestre/ATPI/beecrowd/HW1/untitled1"
+			"value" : "D:/Documents/Estudos/Projetos/cpp/social-media"
 		}
 	],
 	"kind" : "cache",

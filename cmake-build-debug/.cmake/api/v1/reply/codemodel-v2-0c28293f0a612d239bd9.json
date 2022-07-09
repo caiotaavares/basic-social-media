@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Documents/Estudos/Faculdade/Facul1/Gradua\u00e7\u00e3o/Terceiro_Semestre/ATPI/beecrowd/HW1/untitled1/cmake-build-debug",
-		"source" : "D:/Documents/Estudos/Faculdade/Facul1/Gradua\u00e7\u00e3o/Terceiro_Semestre/ATPI/beecrowd/HW1/untitled1"
+		"build" : "D:/Documents/Estudos/Projetos/cpp/social-media/cmake-build-debug",
+		"source" : "D:/Documents/Estudos/Projetos/cpp/social-media"
 	},
 	"version" : 
 	{

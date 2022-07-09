@@ -1,11 +1,13 @@
 #include <iostream>
 
+// Functions
 bool login();
 bool regist();
 void set_admin();
 bool set_new_user(char username[20], char password[20]);
 void users_list();
 
+// Class
 class User {
 public:
     int             id;
@@ -13,6 +15,7 @@ public:
     std::string     password;
 };
 
+// Globals
 User users[10];
 User session;
 int users_num;
