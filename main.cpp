@@ -80,7 +80,7 @@ bool regist() {
     char password[20];
     char conf_password[20];
 
-    std::cout << "-------REGISTRO-------" << std::endl;
+    std::cout << "--------REGISTRO--------" << std::endl;
 
     std::cout << "Set username" << std::endl;
     std::cin >> username;
