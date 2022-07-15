@@ -21,36 +21,39 @@ User session;
 int users_num;
 
 int main() {
+
     set_admin();
+    while(true) {
+        std::cout << "-------MENU-------" << std::endl;
+        std::cout << "1 - Login" << std::endl;
+        std::cout << "2 - Register" << std::endl;
 
-    std::cout << "-------MENU-------" << std::endl;
-    std::cout << "1 - Login" << std::endl;
-    std::cout << "2 - Register" << std::endl;
+        int option;
+        std::cin >> option;
+        switch (option) {
+            case 1:
+                if (login()) {
+                    std::cout << login() << std::endl;
+                    std::cout << "Logged!" << std::endl;
+                    break;
+                } else {
+                    std::cout << "Username or password incorrect!" << std::endl;
+                    return 0;
+                };
 
-    int option;
-    std::cin >> option;
-    switch (option) {
-        case 1:
-            if (login()) {
+            case 2:
+                regist();
+                main();
                 break;
-            } else {
-                std::cout << "Username or password incorrect!" << std::endl;
+
+            case 9:
+                users_list();
                 return 0;
-            };
 
-        case 2:
-            regist();
-            main();
-            break;
-
-        case 9:
-            users_list();
-            return 0;
-
-        default:
-            std::cout << "Option not displayable" << std::endl;
+            default:
+                std::cout << "Option not displayable" << std::endl;
+        }
     }
-    std::cout << "Logged!" << std::endl;
     return 0;
 }
 
@@ -66,7 +69,7 @@ bool login() {
     std::cin >> password;
 
     // Verify user
-    for(int i = 0; i < sizeof(users); i++) {
+    for (int i = 0; i < 10; i++) {
         if(username == users[i].username && password == users[i].password) {
             session = users[i];
             return true;
@@ -88,6 +91,7 @@ bool regist() {
     std::cout << "Set password" << std::endl;
     std::cin >> password;
 
+    //  FIX THE SECOND PASSWORD
 //    std::cout << "Confirm password" << std::endl;
 //    std::cin >> conf_password;
 
@@ -101,9 +105,15 @@ bool regist() {
 
 bool set_new_user(char username[20], char password[20]) {
 
-    users[users_num].id = users_num;
+    users[users_num].id = users_num + 1;
     users[users_num].username = username;
     users[users_num].password = password;
+
+    for (int i = 0; i < 10; i++) {
+        std::cout << users[i].id << std::endl;
+        std::cout << users[i].username << std::endl;
+        std::cout << users[i].password << std::endl;
+    };
 };
 
 void set_admin() {
