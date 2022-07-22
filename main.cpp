@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 // Functions
 bool login();
@@ -32,7 +33,6 @@ int main() {
         switch (option) {
             case 1:
                 if (login()) {
-                    std::cout << login() << std::endl;
                     std::cout << "Logged!" << std::endl;
                     break;
                 } else {
@@ -58,8 +58,8 @@ int main() {
 
 bool login() {
 
-    char username[20];
-    char password[20];
+    std::string username;
+    std::string password;
 
     std::cout << "Username:";
     std::cin >> username;
