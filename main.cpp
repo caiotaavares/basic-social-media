@@ -6,6 +6,7 @@ bool login();
 bool regist();
 void set_admin();
 void users_list();
+void logged();
 
 // Class
 class User {
@@ -34,6 +35,7 @@ int main() {
             case 1:
                 if (login()) {
                     std::cout << "Logged!" << std::endl;
+                    logged();
                     break;
                 } else {
                     std::cout << "Username or password incorrect!" << std::endl;
@@ -132,4 +134,22 @@ void users_list() {
         std::cout << "Username: " << USERS[i].username << std::endl;
         std::cout << std::endl;
     }
+}
+
+void logged() {
+
+    std::cout << "-------PERFIL-------" << std::endl;
+    std::cout << "Olá, " << SESSION.username << std::endl;
+
+    std::cout << "-------MENU DO PERFIL-------" << std::endl;
+    std::cout << "1 - Visualizar Blog" << std::endl;
+    std::cout << "2 - Postar no Blog" << std::endl;
+    int option;
+    switch (option) {
+
+        case 1:
+            blog_view();
+            break;
+    }
+
 }
