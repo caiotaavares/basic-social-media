@@ -4,21 +4,20 @@
 bool login();
 bool regist();
 void set_admin();
-bool set_new_user(char username[20], char password[20]);
 void users_list();
 
 // Class
 class User {
 public:
-    int             id;
+    int             id{};
     std::string     username;
     std::string     password;
 };
 
 // Globals
-User users[10];
-User session;
-int users_num;
+User USERS[10];
+User SESSION;
+int USERS_NUM;
 
 int main() {
 
@@ -69,19 +68,27 @@ bool login() {
     std::cin >> password;
 
     // Verify user
-    for (int i = 0; i < 10; i++) {
-        if(username == users[i].username && password == users[i].password) {
-            session = users[i];
+    for(const auto& user: USERS) {
+        if(username == user.username && password == user.password) {
+            SESSION = user;
             return true;
         } else return false;
     }
+
+//    for (int i = 0; i < 10; i++) {
+//        if(username == users[i].username && password == users[i].password) {
+//            SESSION = users[i];
+//            return true;
+//        } else return false;
+//    }
+    return false;
 };
 
 bool regist() {
 
     char username[20];
     char password[20];
-    char conf_password[20];
+//    char conf_password[20];
 
     std::cout << "--------REGISTRO--------" << std::endl;
 
@@ -100,32 +107,29 @@ bool regist() {
 //        regist();
 //    }
 
-    set_new_user(username, password);
+    USERS_NUM++;
+    USERS[USERS_NUM].id = USERS_NUM;
+    USERS[USERS_NUM].username = username;
+    USERS[USERS_NUM].password = password;
+
+    for (auto & user : USERS) {
+        std::cout << user.id << std::endl;
+        std::cout << user.username << std::endl;
+        std::cout << user.password << std::endl;
+    };
+    return false;
 }
 
-bool set_new_user(char username[20], char password[20]) {
-
-    users[users_num].id = users_num + 1;
-    users[users_num].username = username;
-    users[users_num].password = password;
-
-    for (int i = 0; i < 10; i++) {
-        std::cout << users[i].id << std::endl;
-        std::cout << users[i].username << std::endl;
-        std::cout << users[i].password << std::endl;
-    };
-};
-
 void set_admin() {
-    users[0] = {1, "admin", "admin"};
-    users_num = 1;
+    USERS[0] = {1, "admin", "admin"};
+    USERS_NUM = 1;
 }
 
 void users_list() {
-    for (int i = 0; i < users_num; i++) {
+    for (int i = 0; i < USERS_NUM; i++) {
         std::cout << "User: " << i << std::endl;
-        std::cout << "Id: " << users[i].id << std::endl;
-        std::cout << "Username: " << users[i].username << std::endl;
+        std::cout << "Id: " << USERS[i].id << std::endl;
+        std::cout << "Username: " << USERS[i].username << std::endl;
         std::cout << std::endl;
     }
 }
