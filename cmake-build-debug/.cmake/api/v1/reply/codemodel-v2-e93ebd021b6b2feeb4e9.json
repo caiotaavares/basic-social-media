@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/xampp/htdocs/basic-social-media/cmake-build-debug",
-		"source" : "C:/xampp/htdocs/basic-social-media"
+		"build" : "D:/Documents/Estudos/Projetos/basic-social-media/cmake-build-debug",
+		"source" : "D:/Documents/Estudos/Projetos/basic-social-media"
 	},
 	"version" : 
 	{

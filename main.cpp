@@ -7,6 +7,7 @@ bool regist();
 void set_admin();
 void users_list();
 void logged();
+void blog_view();
 
 // Class
 class User {
@@ -144,12 +145,19 @@ void logged() {
     std::cout << "-------MENU DO PERFIL-------" << std::endl;
     std::cout << "1 - Visualizar Blog" << std::endl;
     std::cout << "2 - Postar no Blog" << std::endl;
+
     int option;
+    std::cin >> option;
+
     switch (option) {
 
         case 1:
             blog_view();
             break;
     }
+
+}
+
+void blog_view() {
 
 }
