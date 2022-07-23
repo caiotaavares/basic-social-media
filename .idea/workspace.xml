@@ -17,7 +17,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ffddb5-b5a9-4753-bcac-c013337337cb" name="Changes" comment="" />
+    <list default="true" id="17ffddb5-b5a9-4753-bcac-c013337337cb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +29,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -89,7 +93,7 @@
       <workItem from="1658173238674" duration="134000" />
       <workItem from="1658455259689" duration="2215000" />
       <workItem from="1658504790620" duration="2907000" />
-      <workItem from="1658616666552" duration="7000" />
+      <workItem from="1658616666552" duration="775000" />
     </task>
     <servers />
   </component>

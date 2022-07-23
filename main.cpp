@@ -7,7 +7,9 @@ bool regist();
 void set_admin();
 void users_list();
 void logged();
+
 void blog_view();
+void set_blog();
 
 // Class
 class User {
@@ -17,14 +19,23 @@ public:
     std::string     password;
 };
 
+class Blog {
+public:
+    int             id{};
+    std::string     title;
+    std::string     context;
+};
+
 // Globals
 User USERS[10];
 User SESSION;
 int USERS_NUM;
+Blog BLOG[10];
 
 int main() {
 
     set_admin();
+    set_blog();
     while(true) {
         std::cout << "-------MENU-------" << std::endl;
         std::cout << "1 - Login" << std::endl;
@@ -160,4 +171,16 @@ void logged() {
 
 void blog_view() {
 
-}
+};
+
+void set_blog() {
+    //Postagem de id 0
+    BLOG[0].id = 0;
+    BLOG[0].title = "lorem ipsum";
+    BLOG[0].context = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+    //Postagem de id 1
+    BLOG[1].id = 1;
+    BLOG[1].title = "lorem ipsum";
+    BLOG[1].context = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+};
