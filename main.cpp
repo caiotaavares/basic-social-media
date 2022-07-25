@@ -31,6 +31,7 @@ User USERS[10];
 User SESSION;
 int USERS_NUM;
 Blog BLOG[10];
+int BLOG_NUM;
 
 int main() {
 
@@ -46,7 +47,7 @@ int main() {
         switch (option) {
             case 1:
                 if (login()) {
-                    std::cout << "Logged!" << std::endl;
+                    std::cout << "Hello, " << SESSION.username << std::endl;
                     logged();
                     break;
                 } else {
@@ -141,6 +142,7 @@ void set_admin() {
 
 void users_list() {
     for (int i = 0; i < USERS_NUM; i++) {
+        std::cout << std::endl;
         std::cout << "User: " << i << std::endl;
         std::cout << "Id: " << USERS[i].id << std::endl;
         std::cout << "Username: " << USERS[i].username << std::endl;
@@ -150,12 +152,10 @@ void users_list() {
 
 void logged() {
 
-    std::cout << "-------PERFIL-------" << std::endl;
-    std::cout << "Olá, " << SESSION.username << std::endl;
-
-    std::cout << "-------MENU DO PERFIL-------" << std::endl;
+    std::cout << std::endl;
     std::cout << "1 - Visualizar Blog" << std::endl;
     std::cout << "2 - Postar no Blog" << std::endl;
+    std::cout << std::endl;
 
     int option;
     std::cin >> option;
@@ -171,6 +171,18 @@ void logged() {
 
 void blog_view() {
 
+    std::cout << "-------BLOG-------" << std::endl;
+    std::cout << "Postagens recentes" << std::endl;
+    std::cout << std::endl;
+
+    for(int i = 0; i < BLOG_NUM; i++) {
+        std::cout << std::endl;
+        std::cout << "#" << BLOG[i].id << std::endl;
+        std::cout << BLOG[i].title << std::endl;
+        std::cout << BLOG[i].context << std::endl;
+    }
+    std::cout << std::endl;
+    logged();
 };
 
 void set_blog() {
@@ -178,9 +190,10 @@ void set_blog() {
     BLOG[0].id = 0;
     BLOG[0].title = "lorem ipsum";
     BLOG[0].context = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
+    BLOG_NUM = 1;
     //Postagem de id 1
     BLOG[1].id = 1;
     BLOG[1].title = "lorem ipsum";
     BLOG[1].context = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    BLOG_NUM = 2;
 };
