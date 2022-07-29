@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Documents/Estudos/Projetos/basic-social-media/cmake-build-debug",
-		"source" : "D:/Documents/Estudos/Projetos/basic-social-media"
+		"build" : "D:/Documents/Estudos/Projetos/cpp/basic-social-media/cmake-build-debug",
+		"source" : "D:/Documents/Estudos/Projetos/cpp/basic-social-media"
 	},
 	"version" : 
 	{

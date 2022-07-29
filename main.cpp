@@ -7,6 +7,7 @@ bool regist();
 void set_admin();
 void users_list();
 void logged();
+void post_blog();
 
 void blog_view();
 void set_blog();
@@ -152,21 +153,41 @@ void users_list() {
 
 void logged() {
 
-    std::cout << std::endl;
-    std::cout << "1 - Visualizar Blog" << std::endl;
-    std::cout << "2 - Postar no Blog" << std::endl;
-    std::cout << std::endl;
+    while (true) {
+        std::cout << std::endl;
+        std::cout << "1 - Visualizar Blog" << std::endl;
+        std::cout << "2 - Postar no Blog" << std::endl;
+        std::cout << std::endl;
 
-    int option;
-    std::cin >> option;
+        int option;
+        std::cin >> option;
 
-    switch (option) {
+        switch (option) {
 
-        case 1:
-            blog_view();
-            break;
+            case 1:
+                blog_view();
+                break;
+
+            case 2:
+                post_blog();
+                break;
+        }
     }
+}
 
+void post_blog() {
+    std::string title;
+    std::string post;
+
+    std::cout << "Titulo da postagem: " << std::endl;
+    std::cin >> title;
+    std::cout << "Conteudo:  " << std::endl;
+    std::cin >> post;
+
+    BLOG_NUM++;
+    BLOG[BLOG_NUM-1].title = title;
+    BLOG[BLOG_NUM-1].context = post;
+    BLOG[BLOG_NUM-1].id = BLOG_NUM;
 }
 
 void blog_view() {
@@ -191,6 +212,7 @@ void set_blog() {
     BLOG[0].title = "lorem ipsum";
     BLOG[0].context = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
     BLOG_NUM = 1;
+
     //Postagem de id 1
     BLOG[1].id = 1;
     BLOG[1].title = "lorem ipsum";
