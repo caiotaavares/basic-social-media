@@ -7,10 +7,10 @@ bool regist();
 void set_admin();
 void users_list();
 void logged();
-void post_blog();
 
 void blog_view();
 void set_blog();
+void post_blog();
 
 // Class
 class User {
@@ -38,38 +38,37 @@ int main() {
 
     set_admin();
     set_blog();
-    while(true) {
-        std::cout << "-------MENU-------" << std::endl;
-        std::cout << "1 - Login" << std::endl;
-        std::cout << "2 - Register" << std::endl;
 
-        int option;
-        std::cin >> option;
-        switch (option) {
-            case 1:
-                if (login()) {
-                    std::cout << "Hello, " << SESSION.username << std::endl;
-                    logged();
-                    break;
-                } else {
-                    std::cout << "Username or password incorrect!" << std::endl;
-                    return 0;
-                };
+    std::cout << "-------MENU-------" << std::endl;
+    std::cout << "1 - Login" << std::endl;
+    std::cout << "2 - Register" << std::endl;
 
-            case 2:
-                regist();
-                main();
+    int option;
+    std::cin >> option;
+
+    switch (option) {
+        case 1:
+            if (login()) {
+                std::cout << "Hello, " << SESSION.username << std::endl;
+                logged();
                 break;
+            } else {
+                std::cout << "Username or password incorrect!" << std::endl;
+                break;
+            };
 
-            case 9:
-                users_list();
-                return 0;
+        case 2:
+            regist();
+            break;
 
-            default:
-                std::cout << "Option not displayable" << std::endl;
-        }
+        case 9:
+            users_list();
+            break;
+
+        default:
+            std::cout << "Option not displayable" << std::endl;
     }
-    return 0;
+    main();
 }
 
 bool login() {
@@ -153,26 +152,30 @@ void users_list() {
 
 void logged() {
 
-    while (true) {
-        std::cout << std::endl;
-        std::cout << "1 - Visualizar Blog" << std::endl;
-        std::cout << "2 - Postar no Blog" << std::endl;
-        std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << "1 - Visualizar Blog" << std::endl;
+    std::cout << "2 - Postar no Blog" << std::endl;
+    std::cout << "3 - Perfil" << std::endl;
+    std::cout << std::endl;
 
-        int option;
-        std::cin >> option;
+    int option;
+    std::cin >> option;
 
-        switch (option) {
+    switch (option) {
 
-            case 1:
-                blog_view();
-                break;
+        case 1:
+            blog_view();
+            break;
 
-            case 2:
-                post_blog();
-                break;
-        }
+        case 2:
+            post_blog();
+            break;
+
+        default:
+            std::cout << "Option not displayable" << std::endl;
+            break;
     }
+    logged();
 }
 
 void post_blog() {
@@ -203,7 +206,6 @@ void blog_view() {
         std::cout << BLOG[i].context << std::endl;
     }
     std::cout << std::endl;
-    logged();
 };
 
 void set_blog() {
